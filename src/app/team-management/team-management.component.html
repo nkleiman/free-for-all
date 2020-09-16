@@ -11,7 +11,8 @@
         </mat-form-field>
     </div>
     <div class="buttons">
-        <button mat-stroked-button class="button" [disabled]="value=='' || this.teamIsRepeated(this.value) || this.isMaximumReached()"
+        <button mat-stroked-button class="button" [disabled]="value=='' || this.teamIsRepeated(this.value) 
+        || this.isMaximumReached() || value == ' '"
          color="primary"(click)="addTeam(this.value)">Add</button>
         &nbsp;
         <button mat-fab color="primary" [disabled]="teamList.length==0" (click)="deleteTeam(teams.selectedOptions.selected[0]?.value)">
@@ -40,6 +41,7 @@
 
 
 <mat-list role="list">
+    
     <mat-list-item role="listitem" *ngFor="let round of fixture; last as last">
         Fecha {{round.date}}
         <mat-list-item role="listitem" *ngFor="let match of round.matches">

@@ -17,7 +17,6 @@ export class TeamManagementComponent implements OnInit {
   value: string;
   fixture: Array<Round> = [];
   isNotGenerated: boolean = true;
-  notClearedYet: boolean = false;
 
   constructor() { }
   ngOnInit(): void {
@@ -88,7 +87,6 @@ export class TeamManagementComponent implements OnInit {
       secondHalf.push(firstHalfToMove);
     }
     this.isNotGenerated = false;
-    this.notClearedYet = true;
   }
 
   clearFixture(){
